@@ -9,10 +9,10 @@ or mobile applications
 
 import gempaterkini
 
-[//]: # (if __name__ == '__main__' :)
+if __name__ == '__main__' :
 
-[//]: # (    print&#40;'Aplikasi utama'&#41;)
+    print('Aplikasi utama')
 
-[//]: # (    result = gempaterkini.ekstraksi_data&#40;&#41;)
+    result = gempaterkini.ekstraksi_data()
 
-[//]: # (    gempaterkini.tampilkan_data&#40;result&#41;)
+    gempaterkini.tampilkan_data(result)
