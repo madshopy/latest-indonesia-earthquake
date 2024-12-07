@@ -1,12 +1,33 @@
 import requests
 from bs4 import BeautifulSoup
+from docutils.nodes import description
+
+from gempaterkini import exstrasi_data, tampilkan_data
 
 
-class gempaTerkini:
-    def __init__(self, url):
-        self.description = 'to get the latest earthquake in indonesia from BMKG.go.id'
+class bencana :
+    def __init__(self, url, description ):
+        self.description = description
         self.result = None
         self.url = url
+    def exstrasi_data(self):
+        pass
+    def tampilkan_data(self):
+        pass
+
+    def run(self):
+        self.exstrasi_data()
+        self.tampilkan_data()
+
+
+
+
+
+class gempaTerkini(bencana):
+    def __init__(self, url):
+        super(gempaTerkini, self).__init__(url,'to get the latest earthquake in indonesia from BMKG.go.id')
+
+
 
     def exstrasi_data(self):  # data akan disimpan pada reprpsitory pypi
         try:
@@ -78,9 +99,6 @@ class gempaTerkini:
         print(f"lokasi = {self.result['lokasi']}")
         print(f"Dirasakan = {self.result['dirasakan']}")
 
-    def run(self):
-        self.exstrasi_data()
-        self.tampilkan_data()
 
 
 if __name__ == '__main__':
