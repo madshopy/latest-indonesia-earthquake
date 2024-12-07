@@ -1,22 +1,33 @@
+
 import requests
 from bs4 import BeautifulSoup
 from docutils.nodes import description
 
 from gempaterkini import exstrasi_data, tampilkan_data
 
+"""
+method =  fungsi/function
+field/atribut = variabel
+constructor = method yang dipanggil pertama kali saat objek diciptakan gunakan
+untuk mendeklarasikan semua field pada class ini
+
+"""
 
 class bencana :
     def __init__(self, url, description ):
         self.description = description
         self.result = None
         self.url = url
-    def exstrasi_data(self):
-        pass
-    def tampilkan_data(self):
+    def scraping_data(self):
         pass
 
+    def tampilkan_data(self):
+        pass
+    def tampilkan_keterangan(self):
+        print(f'under construction', (self.description))
+
     def run(self):
-        self.exstrasi_data()
+        self.scraping_data()
         self.tampilkan_data()
 
 
@@ -29,7 +40,7 @@ class gempaTerkini(bencana):
 
 
 
-    def exstrasi_data(self):  # data akan disimpan pada reprpsitory pypi
+    def scraping_data(self):  # data akan disimpan pada reprpsitory pypi
         try:
             content = requests.get(self.url)
         except Exception:
@@ -99,12 +110,27 @@ class gempaTerkini(bencana):
         print(f"lokasi = {self.result['lokasi']}")
         print(f"Dirasakan = {self.result['dirasakan']}")
 
+class banjirTerkini(bencana):
+    def __init__(self, url):
+        super(banjirTerkini, self).__init__(url, 'not yet implemented')
 
 
 if __name__ == '__main__':
     gempa_indonesia = gempaTerkini("https://bmkg.go.id")
-    print('Deskripsi class gempa indonesia', gempa_indonesia.description)
+    print(f'Aplikasi Utama menggunakan package yang memiliki deskripsi {gempa_indonesia.description}')
+    gempa_indonesia.tampilkan_keterangan()
     gempa_indonesia.run()
+
+    banjir_indonesia = banjirTerkini("not yet")
+    banjir_indonesia.tampilkan_keterangan()
+    banjir_indonesia.run()
+
+
+    daftar_bencana = [gempa_indonesia, banjir_indonesia]
+    print('\n List Bencana')
+    for ben in daftar_bencana:
+        ben.tampilkan_keterangan()
+
 
     # gempa_dunia = gempaTerkini("https://bmkg.go.id")
     # print('Deskripsi class gempa dunia', gempa_dunia.description)
