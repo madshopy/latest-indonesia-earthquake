@@ -60,7 +60,7 @@ class gempaTerkini:
             hasil['koordinat'] = {'ls': ls, 'bt': bt}
             hasil['lokasi'] = lokasi
             hasil['dirasakan'] = dirasakan
-            return (hasil)
+            self.result = (hasil)
         else:
             return None
 
@@ -88,6 +88,6 @@ if __name__ == '__main__':
     print('Deskripsi class gempa indonesia', gempa_indonesia.description)
     gempa_indonesia.run()
 
-    gempa_dunia = gempaTerkini("https://bmkg.go.id")
-    print('Deskripsi class gempa dunia', gempa_dunia.description)
-    gempa_dunia.run()
+    # gempa_dunia = gempaTerkini("https://bmkg.go.id")
+    # print('Deskripsi class gempa dunia', gempa_dunia.description)
+    # gempa_dunia.run()

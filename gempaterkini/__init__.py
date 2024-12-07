@@ -88,4 +88,3 @@ def tampilkan_data(result):
 if __name__ == '__main__':
     result = exstrasi_data()
     tampilkan_data(result)
-

@@ -7,11 +7,25 @@ This package uses beautifllsoup4 and a request which will produce a jSON file ou
 or mobile applications
 
 
-import gempaterkini
+
+## HOW to use?
+
+paste this code to file main.py
 
 """
-if __name__ == '__main__' :
-    print('Aplikasi utama')
-    result = gempaterkini.ekstraksi_data()
-    gempaterkini.tampilkan_data(result)
+import gempaterkini
+
+if __name__ == '__main__':
+     result = gempaterkini.exstrasi_data()
+     gempaterkini.tampilkan_data(result)
+"""
+
+## this code i use oop 
+"""
+from gempaterkini.gempaUPDATE import gempaTerkini
+
+if __name__ == '__main__':
+    gempa_indonesia = gempaTerkini("https://bmkg.go.id")
+    print('Deskripsi class gempa indonesia', gempa_indonesia.description)
+    gempa_indonesia.run()
 """
