@@ -10,20 +10,30 @@ or mobile applications
 
 ## HOW to use?
 
-paste this code to file main.py
+1. make file main.py
+2. paste this code to file main.py
 
 import gempaterkini
 
+from gempaterkini.gempaUPDATE.__init__ import bencana, gempaTerkini
+
+
+## aplikasi gempaterkini folder utama (pembuatan secara prosedural)
 if __name__ == '__main__':
-     result = gempaterkini.exstrasi_data()
-     gempaterkini.tampilkan_data(result)
+    result = gempaterkini.exstrasi_data()
+    gempaterkini.tampilkan_data(result)
 
-## this code i use oop 
 
-from gempaterkini.gempaUPDATE import gempaTerkini
-
+## aplikasi gempaUPDATE subfolder (pembuatan secara OOP)
 if __name__ == '__main__':
     gempa_indonesia = gempaTerkini("https://bmkg.go.id")
     print(f'Aplikasi Utama menggunakan package yang memiliki deskripsi {gempa_indonesia.description}')
     gempa_indonesia.tampilkan_keterangan()
     gempa_indonesia.run()
+
+3. run program
+
+
+
+enjoyy the programm
+
